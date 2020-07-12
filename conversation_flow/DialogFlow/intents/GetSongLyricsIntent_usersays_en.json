@@ -1,0 +1,178 @@
+[
+  {
+    "id": "90aa1c5c-6344-4d3d-9058-b8bfc5c294bc",
+    "data": [
+      {
+        "text": "tell me the lyrics of ",
+        "userDefined": false
+      },
+      {
+        "text": "jack johnson",
+        "alias": "artist",
+        "meta": "@sys.music-artist",
+        "userDefined": true
+      },
+      {
+        "text": "\u0027s ",
+        "userDefined": false
+      },
+      {
+        "text": "banana",
+        "alias": "song",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ff3e84e7-0c1b-475c-8fe2-a9c524be2e30",
+    "data": [
+      {
+        "text": "tell me the lyrics to ",
+        "userDefined": false
+      },
+      {
+        "text": "the climb",
+        "alias": "song",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " by ",
+        "userDefined": false
+      },
+      {
+        "text": "dj khaled",
+        "alias": "artist",
+        "meta": "@sys.music-artist",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4e1c21ef-d3b2-4aa6-a634-c7821f70a7e8",
+    "data": [
+      {
+        "text": "tell me the lyrics of ",
+        "userDefined": false
+      },
+      {
+        "text": "the climb",
+        "alias": "song",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " by ",
+        "userDefined": false
+      },
+      {
+        "text": "miley cyrus",
+        "alias": "artist",
+        "meta": "@sys.music-artist",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e3721903-3f73-4d82-b43c-983b2a5e40bd",
+    "data": [
+      {
+        "text": "Tell me a lyric of ",
+        "userDefined": false
+      },
+      {
+        "text": "song",
+        "alias": "song",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ce84793f-59ed-4d36-8b2e-4cf6659eb1fc",
+    "data": [
+      {
+        "text": "I want to know the lyrics of ",
+        "userDefined": false
+      },
+      {
+        "text": "Amor Prohibido",
+        "alias": "song",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " by ",
+        "userDefined": false
+      },
+      {
+        "text": "Selena",
+        "alias": "artist",
+        "meta": "@sys.music-artist",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "6ccce6be-5045-427c-84f9-64057914bead",
+    "data": [
+      {
+        "text": "I want to know the lyrics of ",
+        "userDefined": false
+      },
+      {
+        "text": "The Climb",
+        "alias": "song",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " by ",
+        "userDefined": false
+      },
+      {
+        "text": "Miley Cyrus",
+        "alias": "artist",
+        "meta": "@sys.music-artist",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "79ca8a79-fb37-4baa-b7cb-21596ed767f1",
+    "data": [
+      {
+        "text": "I want to know the lyrics of ",
+        "userDefined": false
+      },
+      {
+        "text": "a song",
+        "alias": "song",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

@@ -1,0 +1,356 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "funny bunny",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetRepIntent",
+                    "slots": [
+                        {
+                            "name": "level",
+                            "type": "REPLEVEL"
+                        }
+                    ],
+                    "samples": [
+                        "{level} representative",
+                        "{level} representatives",
+                        "I want to know my {level} representatives",
+                        "I want to know who my {level} representatives are",
+                        "Tell me who my representatives are",
+                        "Tell me my representatives",
+                        "Tell me who my {level} representatives are"
+                    ]
+                },
+                {
+                    "name": "GetBillIntent",
+                    "slots": [
+                        {
+                            "name": "legislation",
+                            "type": "bill",
+                            "samples": [
+                                "Yes I do",
+                                "No I don't ",
+                                "No",
+                                "Yes"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "I want to know about {legislation} going through congress",
+                        "I want to know about a {legislation}",
+                        "Tell me about a {legislation} going through congress"
+                    ]
+                },
+                {
+                    "name": "AMAZON.SearchAction<object@WeatherForecast>",
+                    "samples": []
+                },
+                {
+                    "name": "GetOtherWeatherStatIntent",
+                    "slots": [
+                        {
+                            "name": "otherweather",
+                            "type": "otherweather",
+                            "samples": [
+                                "No",
+                                "Yes"
+                            ]
+                        },
+                        {
+                            "name": "city",
+                            "type": "AMAZON.City"
+                        }
+                    ],
+                    "samples": [
+                        "What's the {otherweather} right now",
+                        "Tell me the what the {otherweather} in {city} is",
+                        "Tell me the {otherweather} in {city}",
+                        "What's the {otherweather} in {city}",
+                        "What's the {otherweather} like today in {city}",
+                        "What's the {otherweather} like today"
+                    ]
+                },
+                {
+                    "name": "GetSongLyricsIntent",
+                    "slots": [
+                        {
+                            "name": "song",
+                            "type": "AMAZON.MusicRecording"
+                        }
+                    ],
+                    "samples": [
+                        "Tell me a lyric of the {song}"
+                    ]
+                },
+                {
+                    "name": "GetMiscIntent",
+                    "slots": [
+                        {
+                            "name": "misc",
+                            "type": "funnybunnymisc"
+                        }
+                    ],
+                    "samples": [
+                        "say a {misc}",
+                        "Give me a {misc}",
+                        "can you do a {misc}",
+                        "do a {misc}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "REPLEVEL",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "state",
+                                "synonyms": [
+                                    "state government"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "federal",
+                                "synonyms": [
+                                    "federal government"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "bill",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "bill",
+                                "synonyms": [
+                                    "resolution",
+                                    "legislation",
+                                    "senate bill",
+                                    "bills"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "otherweather",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "air pollution",
+                                "synonyms": [
+                                    "pollen",
+                                    "air quality"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "funnybunnymisc",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "joke",
+                                "synonyms": [
+                                    "funny",
+                                    "something funny"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pep talk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gordon ramsay impression",
+                                "synonyms": [
+                                    "gordon ramsay"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "GetRepIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "level",
+                            "type": "REPLEVEL",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1359164946929.1523919278234"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GetBillIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "legislation",
+                            "type": "bill",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1529001506486.421026553578"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GetOtherWeatherStatIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "otherweather",
+                            "type": "otherweather",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1391445223885.779612914454"
+                            }
+                        },
+                        {
+                            "name": "city",
+                            "type": "AMAZON.City",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "GetSongLyricsIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "song",
+                            "type": "AMAZON.MusicRecording",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.153168126487.892830936926"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GetMiscIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "misc",
+                            "type": "funnybunnymisc",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1234161396082.909924767042"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.286020488499.308787787551",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you mean your state or federal representatives"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1359164946929.1523919278234",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you want to know who your state or who your federal representatives are?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1523374542758.268170216167",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "At your current location or at another {city}"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1529001506486.421026553578",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you want to know about a bill going through congress?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1234161396082.909924767042",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Did you want a gordon ramsey impression, a pep talk, or a joke?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1391445223885.779612914454",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you want to know the air quality?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.153168126487.892830936926",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What song do you want the lyrics to?"
+                    }
+                ]
+            }
+        ]
+    }
+}

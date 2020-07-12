@@ -1,0 +1,77 @@
+{
+  "id": "dd6790e0-2f63-40b5-97e6-8c50058a3ddd",
+  "name": "GetSongLyricsIntent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": true,
+      "affectedContexts": [
+        {
+          "name": "I",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "want",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "to",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "know",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "cf959b27-e1b2-402b-8bd3-8a2c5be4281b",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "song",
+          "value": "$song",
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "0c3cddf1-7d27-4bf1-b556-f27a2831b8bb",
+          "required": false,
+          "dataType": "@sys.music-artist",
+          "name": "artist",
+          "value": "$artist",
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
