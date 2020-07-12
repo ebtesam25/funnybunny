@@ -181,7 +181,7 @@ export default class Chat extends Component {
         <Text style={styles.modeSelect} onPress={()=>this.props.navigation.navigate('Serious')}>Serious</Text>
         <Image source={require('../assets/images/header.png')} style={styles.header}></Image><Text>1</Text>
         <Image source={require('../assets/images/image.png')} style={styles.image}></Image>
-        <Text onPress={this._pickImage} style={{position:'absolute',zIndex:6,bottom:10,right:50, fontSize:20, color:'transparent'}} >"PICK"</Text>
+        <Text onPress={this._pickImage} style={{position:'absolute',zIndex:6,bottom:10,right:50, fontSize:20, color:'transparent'}} >"PICK!"</Text>
         <GiftedChat
           
           messages={this.state.messages}

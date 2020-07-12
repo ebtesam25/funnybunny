@@ -113,7 +113,7 @@ export default class Serious extends Component {
 
   handleGoogleResponse(req,result) {
         
-    if(req.includes("Joke")){
+    if(req.includes("joke")){
         console.log(result);
         let text = result.queryResult.fulfillmentMessages[0].text.text[0];
         this.sendBotResponse(text);
@@ -125,8 +125,13 @@ export default class Serious extends Component {
         text.push("\n\n"+(i+1)+". "+result[i].name+"\nDescription: "+result[i].description+"\nCategory: "+result[i].category+"\nStatus: "+result[i].status+"\nType: "+result[i].type);
         
     }
-            
+    
     this.sendBotResponse(text);
+    }
+    else if(req.includes("advice")){
+        console.log(result);
+        let text = result;
+        this.sendBotResponse(text);
     }
   
   else if(req.includes("weather")){
@@ -167,6 +172,22 @@ export default class Serious extends Component {
         data.push(str.main);
         data.push(str.weather[0]);
         //console.log(data);
+        this.handleGoogleResponse(test,data);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+    }
+    else if(test.includes("advice")){
+        fetch('https://api.adviceslip.com/advice', {
+        method: 'GET',
+      })
+    .then((response) => response.json())
+    .then((responseJson) => {
+        str = responseJson.slip;
+        data = str.advice;
+        
+        console.log(data);
         this.handleGoogleResponse(test,data);
     })
     .catch((error) => {
