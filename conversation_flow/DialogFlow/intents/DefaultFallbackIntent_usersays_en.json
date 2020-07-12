@@ -1,0 +1,122 @@
+[
+  {
+    "id": "a102c35e-1b9f-44e6-b460-512c91ba897a",
+    "data": [
+      {
+        "text": "i feel bored could you please tell me some travel destinations",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a04d896f-6474-4765-becd-ff147c70c6a6",
+    "data": [
+      {
+        "text": "one more coffee shop on the way",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "497c165e-6181-4dbc-a33c-4d06d4735594",
+    "data": [
+      {
+        "text": "tell me the best barbershop around here",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "6f01ee28-95ea-4bf3-8d6e-0cb377fe08e2",
+    "data": [
+      {
+        "text": "make me drive to the time square",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "72b3baa4-0e8d-4587-a436-b9e84ced7eef",
+    "data": [
+      {
+        "text": "more news",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3859b769-ca79-4b07-a585-e87544f122eb",
+    "data": [
+      {
+        "text": "let\u0027s set an alarm",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b3b9fc2d-ae36-4347-9988-1e1823c52cbe",
+    "data": [
+      {
+        "text": "pizza please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "dbeb072b-9624-458f-b59b-0244ffafdde5",
+    "data": [
+      {
+        "text": "any good cooking recipe",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "95ab07fd-7d48-4396-a08e-59260bb01f8d",
+    "data": [
+      {
+        "text": "I want some restaurant recommendations",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "9d50438a-dae8-4b06-ad2f-bd43bec22ed6",
+    "data": [
+      {
+        "text": "Tell me about the weather",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

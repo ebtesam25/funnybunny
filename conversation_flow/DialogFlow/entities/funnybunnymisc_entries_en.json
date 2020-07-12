@@ -1,0 +1,31 @@
+[
+  {
+    "value": "misc",
+    "synonyms": [
+      "misc"
+    ]
+  },
+  {
+    "value": "joke",
+    "synonyms": [
+      "joke",
+      "funny",
+      "something funny"
+    ]
+  },
+  {
+    "value": "pep talk",
+    "synonyms": [
+      "pep talk"
+    ]
+  },
+  {
+    "value": "gordon ramsay",
+    "synonyms": [
+      "gordon ramsay",
+      "gordon ramsay joke",
+      "gordon ramsay saying",
+      "gordon ramsay impression"
+    ]
+  }
+]
