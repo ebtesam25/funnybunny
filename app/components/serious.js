@@ -17,7 +17,7 @@ const BOT_USER = {
   avatar: require('../assets/images/bunny.png')
 };
 
-export default class Chat extends Component {
+export default class Serious extends Component {
   state = {
     image: null,
     messages: [
@@ -111,11 +111,34 @@ export default class Chat extends Component {
 
   
 
-  handleGoogleResponse(result) {
-    let text = result.response;
-    console.log(text);
+  handleGoogleResponse(req,result) {
+        
+    if(req.includes("Joke")){
+        console.log(result);
+        let text = result.queryResult.fulfillmentMessages[0].text.text[0];
+        this.sendBotResponse(text);
+    }
+    else if(req.includes("civic")){
+        var i=0;
+        let text = [];
+    for(i=0;i<result.length;i++){
+        text.push("\n\n"+(i+1)+". "+result[i].name+"\nDescription: "+result[i].description+"\nCategory: "+result[i].category+"\nStatus: "+result[i].status+"\nType: "+result[i].type);
+        
+    }
+            
     this.sendBotResponse(text);
+    }
+  
+  else if(req.includes("weather")){
+        let text = []
+        
+        text.push("\nFeels Like: "+(result[0]["feels_like"]*(9/5)-459.67).toFixed(2)+" F" +"\nTemperature: "+(result[0]["temp"]*(9/5)-459.67).toFixed(2)+" F" +"\nHumidity: "+result[0]["humidity"]+"\nPressure: "+result[0]["pressure"]);
+        console.log(result[1]);
+        text.push("\n"+result[1]["main"]+"\n"+result[1]["description"]);
+        this.sendBotResponse(text);
+
   }
+}
 
   onSend(messages = [], image) {
     image=this.state.image;
@@ -129,34 +152,35 @@ export default class Chat extends Component {
     }));
 
     let message = messages[0].text;
-
+    console.log(message);
+    var test = message;
     
-    fetch('http://3cdd4b10abe4.ngrok.io/talkback', {
-                    method: 'POST',
-                    headers: {
-                    'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        "text": message
-                    })
-            })
-                .then((response) => response.json())
-                .then((responseJson) => {
-            console.log(responseJson);
-            this.handleGoogleResponse(responseJson);
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-
-   /*} fetch('https://reactnative.dev/movies.json')
-      .then((response) => response.json())
-      .then((json) => {
-        this.setState({ data: json.movies });
-        this.handleGoogleResponse(json.movies),
-        console.log(this.state.data);
-      })*/
-   
+    if(test.includes("weather")){
+        fetch('https://api.openweathermap.org/data/2.5/weather?lat=34.51&lon=-117.41&appid=1f4f2ef2146f3fb37180e51479079695', {
+        method: 'GET',
+      })
+    .then((response) => response.json())
+    .then((responseJson) => {
+        str = responseJson;
+        
+        let data = [];
+        data.push(str.main);
+        data.push(str.weather[0]);
+        //console.log(data);
+        this.handleGoogleResponse(test,data);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+    }
+    else{
+        Dialogflow_V2.requestQuery(
+            message,
+            result => this.handleGoogleResponse(test,result),
+            error => console.log(error)
+          );
+      
+    }
   }
 
   sendBotResponse(text) {
@@ -166,7 +190,6 @@ export default class Chat extends Component {
       createdAt: new Date(),
       user: BOT_USER
     };
-    console.log(msg);
 
     this.setState(previousState => ({
       messages: GiftedChat.append(previousState.messages, [msg])
@@ -177,9 +200,9 @@ export default class Chat extends Component {
     
     return (
       <View style={styles.container}>
-        <Image source={require('../assets/images/sarcastic.png')} style={styles.mode}></Image>
-        <Text style={styles.modeSelect} onPress={()=>this.props.navigation.navigate('Serious')}>Serious</Text>
-        <Image source={require('../assets/images/header.png')} style={styles.header}></Image><Text>1</Text>
+        <Image source={require('../assets/images/serious.png')} style={styles.mode}></Image>
+        <Text style={styles.modeSelect} onPress={()=>this.props.navigation.navigate('Chat')}>Serious</Text>
+        <Image source={require('../assets/images/header.png')} style={styles.header}></Image>
         <Image source={require('../assets/images/image.png')} style={styles.image}></Image>
         <Text onPress={this._pickImage} style={{position:'absolute',zIndex:6,bottom:10,right:50, fontSize:20, color:'transparent'}} >"PICK"</Text>
         <GiftedChat
@@ -193,6 +216,8 @@ export default class Chat extends Component {
           isTyping
           alwaysShowSend 
           renderSend={this.renderSend}
+          infiniteScroll 
+          loadEarlier
         />
       </View>
     );
@@ -228,7 +253,7 @@ const styles = StyleSheet.create({
     fontSize:30,
     position:'absolute',
     top:'11%',
-    right:'15%',
+    left:'15%',
     zIndex:4,
     color:'transparent',
   },

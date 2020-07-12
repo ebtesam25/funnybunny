@@ -3157,6 +3157,14 @@ expo-image-loader@~1.1.1:
   resolved "https://registry.yarnpkg.com/expo-image-loader/-/expo-image-loader-1.1.1.tgz#6c65bd1a41761c8acb91575060579e4864b93394"
   integrity sha512-qI4opRO2D1MGRAbHxYnMBJ4LzKT17KfqbM5oTxNoMZCRNpzB0xsuJrWy5C+0UOkV0vnqQyjvCtynTSawhWnl9A==
 
+expo-image-picker@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-8.3.0.tgz#5a9daacbc1afa7fdbfd31edb22818524ad0b85e2"
+  integrity sha512-HCF7SumPE4jXH+EhJ19Xw6G8Lxpms1z6Hxdq/kLlzvZGdzH4ZFBqp3NyTO7dtm0dXtjduljpNK7kQfwWtvmIWQ==
+  dependencies:
+    expo-permissions "~9.0.1"
+    uuid "7.0.2"
+
 expo-keep-awake@~8.2.1:
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-8.2.1.tgz#a7956ad0fa80eb6ac6a28bb7242408e87c493677"
@@ -3178,7 +3186,7 @@ expo-linking@~1.0.3:
     qs "^6.5.0"
     url-parse "^1.4.4"
 
-expo-location@~8.2.1:
+expo-location@^8.2.1, expo-location@~8.2.1:
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/expo-location/-/expo-location-8.2.1.tgz#5ea6bfd3d211939117416da151f1384caa15e0db"
   integrity sha512-MixKapt3nijAxyjIISscBzdKi8bwh0H/dWYsL2mCofrjguFHOh2gP07h95902lekb7NVqybl5AIQRW5cvrG4rQ==
@@ -4834,6 +4842,11 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+jsrsasign@^8.0.12:
+  version "8.0.20"
+  resolved "https://registry.yarnpkg.com/jsrsasign/-/jsrsasign-8.0.20.tgz#37d8029c9d8f794d8ac8d8998bce319921491f11"
+  integrity sha512-JTXt9+nqdynIB8wFsS6e8ffHhIjilhywXwdaEVHSj9OVmwldG2H0EoCqkQ+KXkm2tVqREfH/HEmklY4k1/6Rcg==
+
 kind-of@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-1.1.0.tgz#140a3d2d41a36d2efcfa9377b62c24f8495a5c44"
@@ -6083,6 +6096,13 @@ react-native-communications@^2.2.1:
   resolved "https://registry.yarnpkg.com/react-native-communications/-/react-native-communications-2.2.1.tgz#7883b56b20a002eeb790c113f8616ea8692ca795"
   integrity sha1-eIO1ayCgAu63kMET+GFuqGksp5U=
 
+react-native-dialogflow@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/react-native-dialogflow/-/react-native-dialogflow-3.2.2.tgz#91d74f053ebc18390332f2b21dcc17553b83a638"
+  integrity sha512-LWsrW7b9LA8+MTW4gA0z5jD7XrZ9ASfUMTck0hySEvnI+eqkY8Tz2cd166kHRW7yyIHlo5IhtkivWgm4EAyiNw==
+  dependencies:
+    jsrsasign "^8.0.12"
+
 react-native-elements@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-2.0.4.tgz#ea5a6bb34cabd48dcd6c6546e4737d2075e40ee3"
@@ -6134,6 +6154,11 @@ react-native-lightbox@^0.8.1:
   integrity sha512-TFZA6iKEEHpAUIXjMTRb6vx0/9rHgEKy3ZBiRAy295PwldYg5c8opwnbyURLIl522ykeqhVx9uGdXjSMIowLvA==
   dependencies:
     prop-types "^15.7.2"
+
+react-native-maps@^0.27.1:
+  version "0.27.1"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.27.1.tgz#2f10cd417bb2fd938c9e015b1c9b6d9b1a44b97f"
+  integrity sha512-HygBkZBecTnIVRYrSiLRAvu4OmXOYso/A7c6Cy73HkOh9CgGV8Ap5eBea24tvmFGptjj5Hg8AJ94/YbmWK1Okw==
 
 react-native-parsed-text@0.0.22:
   version "0.0.22"
@@ -7487,6 +7512,11 @@ uuid@3.4.0, uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+uuid@7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.2.tgz#7ff5c203467e91f5e0d85cfcbaaf7d2ebbca9be6"
+  integrity sha512-vy9V/+pKG+5ZTYKf+VcphF5Oc6EFiu3W8Nv3P3zIh0EqVI80ZxOzuPfe9EHjkFNvf8+xuTHVeei4Drydlx4zjw==
 
 uuid@^7.0.3:
   version "7.0.3"
