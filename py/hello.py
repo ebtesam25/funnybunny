@@ -1,10 +1,11 @@
-from flask import Flask,request,url_for, redirect
+from flask import Flask,request,url_for, redirect, render_template
 from flask_cors import CORS
 import json
 import os
 import sys
 import requests
 import time
+import pymongo
 # If you are using a Jupyter notebook, uncomment the following line.
 # %matplotlib inline
 import matplotlib.pyplot as plt
@@ -43,13 +44,13 @@ def cup():
         print("**Restart your shell or IDE for changes to take effect.**")
         sys.exit()
 
-    text_recognition_url = endpoint + "/vision/v3.0/read/analyze"
+    text_recognition_url = endpoint + "vision/v3.0/read/analyze"
 
     # Set image_url to the URL of an image that you want to recognize.
     image_url = posted_data["img"]
-
+    print(image_url)
     headers = {'Ocp-Apim-Subscription-Key': subscription_key}
-    data = {'url': image_url}
+    data = {"url": image_url}
     response = requests.post(
         text_recognition_url, headers=headers, json=data)
     response.raise_for_status()
@@ -85,16 +86,23 @@ def cup():
         text = [(line["text"])
                     for line in analysis["analyzeResult"]["readResults"][0]["lines"]]
         print(text)
-        return redirect(url_for('teapot', text=text, polygons=polygons))
-
+        client = pymongo.MongoClient("localhost", 27017)
+        db = client["savemynotes"]
+        print(db.name)
+        
+        print(db.note.insert_one({"x": text,"y":polygons,"index":"test"}).inserted_id)
     
     return {"res": text}, 201
 
 @myapp.route("/teapot", methods=["GET"])
 def notes():
-    text = request.args.get('text', None)
-    polygons = request.args.get('polygons', None)
-    return text
+    client = pymongo.MongoClient("localhost", 27017)
+    db = client["savemynotes"]
+    mongores = db.note.find_one({"index":"test"})
+    text = mongores["x"]
+    polygons = mongores["y"]
+    print(mongores)
+    return render_template("home.html", list=zip(text,polygons))
 
 if __name__ == '__main__':
     myapp.run(port=443)

@@ -57,8 +57,8 @@ export default class Chat extends Component {
       let result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.All,
         allowsEditing: true,
-        aspect: [4, 3],
-        quality: 1,
+        aspect: [9,12],
+        quality: 0.5,
         base64: true,
       });
       if (result.cancelled) {
@@ -157,7 +157,7 @@ export default class Chat extends Component {
 
     let message = messages[0].text;
 
-    fetch('http://5e70c7438acc.ngrok.io/teacup', {
+    fetch('http://acd835cbbea3.ngrok.io/teacup', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'            

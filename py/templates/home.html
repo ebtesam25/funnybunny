@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Application Home Page</title>
+    <title>Notes||FunnyBunny</title>
+    <style>
+        body{
+            background-color: #eeeeee;
+            font-family: 'Avenir';
+        }
+    </style>
 </head>
 <body>
-    <h2>
-        Hello World!
-    </h2>
+    <div style="text-align: left;margin: 20px 50px;font-family: Futura;background-color: #eeb0bc;border-radius: 70px;padding: 50px;">
+        {% for item in list %}   
+        <div top={{item[1][0][2]}}>{{ item[0] }} </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
