@@ -53,21 +53,48 @@ export default class Chat extends Component {
   };
 
   _pickImage = async () => {
-    try {
+    
       let result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.All,
         allowsEditing: true,
         aspect: [4, 3],
         quality: 1,
+        base64: true,
       });
-      if (!result.cancelled) {
-        this.setState({ image: result.uri });
+      if (result.cancelled) {
+        this.setState({ image: null });
       }
+      
 
       console.log(result);
-    } catch (E) {
-      console.log(E);
+    
+
+    let cloudinary = 'https://api.cloudinary.com/v1_1/diywehkap/image/upload';
+    //this.setState({ localUri: result.uri });
+    let base64Img = `data:image/jpg;base64,${result.base64}`;
+
+    let data = {
+      "file": base64Img,
+      "upload_preset": "hm4fkyir",
     }
+    fetch(cloudinary, {
+      body: JSON.stringify(data),
+      headers: {
+        'content-type': 'application/json'
+      },
+      method: 'POST',
+    }).then(async r => {
+      let data = await r.json()
+      let cUrl=data.secure_url;
+      let pUrl=cUrl.toString();
+      console.log(pUrl);
+      this.setState({ image: pUrl });
+      
+
+              
+          }).catch(err=>console.log(err));
+    
+
   };
 
   renderSend(props) {
@@ -112,7 +139,7 @@ export default class Chat extends Component {
   
 
   handleGoogleResponse(result) {
-    let text = result.response;
+    let text = result.toString();
     console.log(text);
     this.sendBotResponse(text);
   }
@@ -130,7 +157,21 @@ export default class Chat extends Component {
 
     let message = messages[0].text;
 
-    
+    fetch('http://5e70c7438acc.ngrok.io/teacup', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'            
+            },
+            body: JSON.stringify({img:image})
+          }).then(response => response.json())
+          .then(data => {
+            console.log(data);
+            console.log(data.res);
+            this.handleGoogleResponse(data.res);
+          })
+          .catch(err=>console.log(err));
+
+    /*
     fetch('http://3cdd4b10abe4.ngrok.io/talkback', {
                     method: 'POST',
                     headers: {
@@ -147,7 +188,7 @@ export default class Chat extends Component {
                 })
                 .catch((error) => {
                     console.error(error);
-                });
+                });*/
 
    /*} fetch('https://reactnative.dev/movies.json')
       .then((response) => response.json())

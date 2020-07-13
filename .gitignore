@@ -2,3 +2,8 @@
 /package.json
 /yarn-error.log
 /yarn.lock
+/py/__pycache__
+/py/env
+/py/requirements.txt
+/py/startup.txt
+/py/.deployment
